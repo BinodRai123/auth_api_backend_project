@@ -33,9 +33,41 @@ async function registerController(req, res){
 }
 
 
+async function loginController(req,res){
+    const {userName, password} = req.body;
 
+    const user = await userModel.findOne({
+        userName:userName
+    })
+
+    if(!user){
+        return res.status(401).json({
+            message:"invalid user name "
+        })
+    }
+
+    const isPasswordValid = await bcrypt.compare(password, user.password);
+
+    if(!isPasswordValid){
+        return res.status(401).json({
+            message:"invalid password"
+        })
+    }
+
+    const token = jwt.sign({
+        id:user._id
+    },process.env.JWT_SECRET_KEY);
+
+    res.cookie("token",token);
+
+    res.status(200).json({
+        message:"login sucessfully",
+        user:user
+    })
+}
 
 
 module.exports = {
-    registerController
+    registerController,
+    loginController
 }
