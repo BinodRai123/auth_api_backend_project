@@ -7,7 +7,7 @@ const cookieParser = require("cookie-parser");
 const server = expres();
 server.use(expres.json());
 server.use(cookieParser());
-server.use("/auth",authRouter);
+server.use("/api/auth",authRouter);
 
 
 module.exports = server;
