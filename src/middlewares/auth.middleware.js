@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 const userModel = require("../models/user.models");
 
-async function authMiddleware(req,res){
+async function authMiddleware(req,res,next){
     const token = req.cookies.token;
 
     if(!token){
@@ -17,7 +17,9 @@ async function authMiddleware(req,res){
             _id:decode.id
         })
 
+        req.user = user;
 
+        next();
     } catch (error) {
         console.log({
             message:"invalid token",

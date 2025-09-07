@@ -1,9 +1,17 @@
 const expresss = require("express");
+const router = expresss.Router();
+const multer = require("multer");
+const authMiddleware = require("../middlewares/auth.middleware");
 const { postController } = require("../controllers/post.controller");
 
-const router = expresss.Router();
+const upload = multer({storage: multer.memoryStorage()});
 
-router.post("/",postController)
+router.post(
+    "/",
+    authMiddleware,
+    upload.single("image"),
+    postController
+)
 
 
 
