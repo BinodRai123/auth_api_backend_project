@@ -20,10 +20,10 @@ async function GenerateCaption(base64ImageFile) {
     config:{
         systemInstruction:`
         You are a Expert in Image Caption making.
-        Image Caption be short and center of attraction.
+        Caption be short and center of attraction.
         Caption should pinpoint about the Image.
         Use emoji and hashtags.
-        make a dark humor Caption and comedy.
+        make a dark humor and comedy caption.
         `
     }
   });

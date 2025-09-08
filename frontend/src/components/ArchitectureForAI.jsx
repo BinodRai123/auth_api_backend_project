@@ -83,20 +83,16 @@ const [images, setImages] = useState([]);
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div className="relative group overflow-hidden rounded-xl shadow-lg">
-                  <img src={images[0]} alt="Random" className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50 group-hover:opacity-75 transition-opacity"></div>
+                  <img src={images[0]} alt="Random" className="w-full h-auto object-cover transition-transform duration-500 hover:scale-110" />
                 </div>
                 <div className="relative group overflow-hidden rounded-xl shadow-lg mt-8">
                   <img src={images[1]} alt="Random" className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50 group-hover:opacity-75 transition-opacity"></div>
                 </div>
                 <div className="relative group overflow-hidden rounded-xl shadow-lg">
                   <img src={images[2]} alt="Random" className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50 group-hover:opacity-75 transition-opacity"></div>
                 </div>
                 <div className="relative group overflow-hidden rounded-xl shadow-lg mt-8">
                   <img src={images[3]} alt="Random" className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50 group-hover:opacity-75 transition-opacity"></div>
                 </div>
               </div>
             </div>
