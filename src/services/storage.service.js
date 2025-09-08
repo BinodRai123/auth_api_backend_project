@@ -9,8 +9,11 @@ var imagekit = new ImageKit({
 async function uploadImage(file, fileName){
     const response = await imagekit.upload({
         file:file,
-        fileName:fileName
+        fileName:fileName,
+        folder:"images"
     })
+
+    return response;
 }
 
 module.exports = uploadImage;

@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const userModel = require("./user.models");
 
 
 const postSchema = new mongoose.Schema({
@@ -12,7 +11,7 @@ const postSchema = new mongoose.Schema({
 })
 
 
-const postModel = mongoose.model("post",postModel);
+const postModel = mongoose.model("post",postSchema);
 
 
-module.exports = userModel;
+module.exports = postModel;
